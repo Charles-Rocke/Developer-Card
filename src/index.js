@@ -31,39 +31,30 @@ function Intro() {
         lifting, I love to wrestle and coach wrestling. I love Colombian food
         and Ritas Ice Cream!
       </p>
-      <SkillList
-        react="#05C1FF"
-        js="#FFDF01"
-        python="#32CD32"
-        html="#e46400"
-        web="#DE73FF"
-        gitHub="#D2042D"
-      />
+      <SkillList />
     </div>
   );
 }
 // Skills Component
-function SkillList(props) {
+function SkillList() {
   return (
     <div className="skill-list">
-      <div className="skill" style={{ backgroundColor: props.html }}>
-        HTML+CSS
-      </div>
-      <div className="skill" style={{ backgroundColor: props.js }}>
-        Javascript
-      </div>
-      <div className="skill" style={{ backgroundColor: props.web }}>
-        Web Dev, Design, Deploy
-      </div>
-      <div className="skill" style={{ backgroundColor: props.react }}>
-        React
-      </div>
-      <div className="skill" style={{ backgroundColor: props.python }}>
-        Python
-      </div>
-      <div className="skill" style={{ backgroundColor: props.gitHub }}>
-        Git & Github
-      </div>
+      <Skill skill="HTML+CSS" color="#e46400" />
+      <Skill skill="Javascript" color="#FFDF01" />
+      <Skill skill="Web Dev, Design, & Deploy" color="#DE73FF" />
+      <Skill skill="React" color="#05C1FF" />
+      <Skill skill="Python/Flask/Django/FastAPI" color="#32CD32" />
+      <Skill skill="Git & GitHub" color="#D2042D" />
+    </div>
+  );
+}
+
+// Skill component
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
     </div>
   );
 }
@@ -74,8 +65,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
